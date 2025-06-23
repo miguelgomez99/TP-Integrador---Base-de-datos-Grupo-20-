@@ -1,4 +1,4 @@
-INSERT INTO Usuario (NombreUser, ContraseÃ±a, Email, TipoUsuario, Activo) VALUES 
+INSERT INTO Usuario (NombreUser, Contraseña, Email, TipoUsuario, Activo) VALUES 
 ('admin', 'admin123', 'admin@logistica.com', 'Admin', 1),
 ('cliente1', 'clave123', 'cliente1@mail.com', 'Cliente', 1),
 ('transportista1', 'clave456', 'trans1@mail.com', 'Trans1', 1),
@@ -20,9 +20,9 @@ INSERT INTO Vehiculo (Patente, CapacidadDeCarga, Disponible, IDEstadoVehiculo) V
 ('GHI321', 1800.00, 1, 1);
 
 INSERT INTO Transportista (IDUsuario, Nombre, Apellido, Telefono, Licencia, Cuil, Activo, Legajo, EstadoDisponible) VALUES 
-(3, 'Juan', 'PÃ©rez', '1123456789', 'LIC1234567', 20345678901, 1, 1001,1),
-(5, 'Luis', 'GÃ³mez', '1198765432', 'LIC7654321', 20345678902, 1, 1002,1),
-(7, 'Ana', 'MartÃ­nez', '1187654321', 'LIC2345678', 20345678903, 1, 1003,1);
+(3, 'Juan', 'Pérez', '1123456789', 'LIC1234567', 20345678901, 1, 1001,1),
+(5, 'Luis', 'Gómez', '1198765432', 'LIC7654321', 20345678902, 1, 1002,1),
+(7, 'Ana', 'Martínez', '1187654321', 'LIC2345678', 20345678903, 1, 1003,1);
 
 INSERT INTO TransportistaVehiculo (IDTransportista, IDVehiculo, FechaAsignacion) VALUES 
 (1, 1, GETDATE()),
@@ -52,9 +52,9 @@ INSERT INTO Destinatarios (Cuil, Nombre, Apellido, Telefono, Email, Calle, Numer
 (30123458, 'Maggie', 'Simpson', 1145675678, 'maggie@springfield.com', 'Calle Inventada', 101, 'Springfield', '1003', 'Buenos Aires');
 
 INSERT INTO Rutas (PuntoPartida, PuntoDestino, TiempoEnMinutos, DistanciaKilometros) VALUES 
-('Buenos Aires', 'CÃ³rdoba', 420, 700.5),
+('Buenos Aires', 'Córdoba', 420, 700.5),
 ('Rosario', 'Mendoza', 600, 1000.0),
-('CÃ³rdoba', 'Santa Fe', 240, 400.0);
+('Córdoba', 'Santa Fe', 240, 400.0);
 
 INSERT INTO EstadoOrdenesEnvio (Descripcion) VALUES 
 ('Pendiente'),
@@ -65,7 +65,7 @@ INSERT INTO EstadoOrdenesEnvio (Descripcion) VALUES
 ('Cancelado');
 
 INSERT INTO OrdenesEnvio (IDUsuario, IDCliente, IDTransportista, IDRuta, IDEstadoOrdenEnvio, IDDestinatario, FechaEnvio, FechaEstimadaDeEntrega, FechaLlegada) VALUES 
-(2, 1, 2, 1, 2, 1, GETDATE(), DATEADD(day, 2, GETDATE()), DATEADD(day, 3, GETDATE())),
+(2, 1, 2, 1, 2, 1, GETDATE(), DATEADD(day, 2, GETDATE()), NULL),
 (4, 2, 2, 2, 3, 2, GETDATE(), DATEADD(day, 2, GETDATE()), DATEADD(day, 3, GETDATE())),
 (6, 3, 3, 3, 3, 3, GETDATE(), DATEADD(day, 2, GETDATE()), DATEADD(day, 3, GETDATE()));
 
